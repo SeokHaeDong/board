@@ -38,9 +38,19 @@ public class ServiceTest {
         System.out.println(boardDTO);
     }
 
-    @Test
+    //@Test
     public void deleteTest(){
-        boardService.removeWithReplies(11L);
+        boardService.removeWithReplies(7L);
     }
+
+    @Test
+    public void modify(){
+        BoardDTO dto = BoardDTO.builder().bno(1L).title("수정 테스트").content("수정 테스트 content").build();
+
+        boardService.modify(dto);
+    }
+
+
+
 
 }

@@ -57,13 +57,14 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public void removeWithReplies(Long bno) {
         replyRepository.deleteByBno(bno);
-        replyRepository.deleteById(bno);
+        repository.deleteById(bno);
 
     }
 
     @Transactional
     @Override
     public void modify(BoardDTO boardDTO) {
+        // 데이터를 조회해서 있으면 수정
         Optional<Board> board = repository.findById(boardDTO.getBno());
 
         if(board.isPresent()){
