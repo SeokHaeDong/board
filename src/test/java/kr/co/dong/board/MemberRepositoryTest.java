@@ -106,7 +106,7 @@ public class MemberRepositoryTest {
         }
     }
 
-    @Test
+    //@Test
     public void testBoardList(){
         // 페이징 조건 생성 - 0 페이지에 10개의 데이터를 bno 의 내림차순으로 가져오기
         Pageable pageable = PageRequest.of(1, 10, Sort.by("bno").descending());
@@ -118,5 +118,15 @@ public class MemberRepositoryTest {
         });
 
     }
+
+
+    //@Test
+    public void getBoardBybnoTest(){
+        Object result = boardRepository.getBoardByBno(5L);
+        Object[] ar = (Object[]) result;
+        System.out.println(Arrays.toString(ar));
+    }
+
+
 
 }
