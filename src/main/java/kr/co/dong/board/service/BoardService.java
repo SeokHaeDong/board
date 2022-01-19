@@ -1,5 +1,6 @@
 package kr.co.dong.board.service;
 
+import com.fasterxml.jackson.databind.util.ArrayBuilders;
 import kr.co.dong.board.dto.BoardDTO;
 import kr.co.dong.board.dto.PageRequestDTO;
 import kr.co.dong.board.dto.PageResultDTO;
@@ -39,6 +40,7 @@ public interface BoardService {
 
     // 수정을 위한 메서드
     public void modify(BoardDTO boardDTO);
+
 
 
 
